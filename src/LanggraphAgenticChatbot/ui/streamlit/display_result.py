@@ -45,6 +45,7 @@ class DisplayResultStreamlit:
             frequency=self.user_message
             with st.spinner("Fetching and Summarizing news...."):
                 result=graph.invoke({"messages":frequency})
+                st.write(result["messages"].content)
                 try:
                     ##Read the markdown file
                     AI_NEWS_PATH=f"./AINews/{frequency.lower()}_summary.md"
